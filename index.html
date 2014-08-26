@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="monsterconstruct">
+<head>
+  <title>Monster Construct</title>
+  <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container" ng-controller="FightController as fight">
+  <h1>Monster Construct</h1>
+  <div class="row">
+    <div class="col-md-3 col-md-offset-3">
+      <h2>Player</h2>
+      <p>Name: <span id="player_hp">{{fight.player.name}}</span></p>
+      <p>HP: <span id="player_hp">{{fight.player.hp}}</span></p>
+      <p>Level: <span id="player_hp">{{fight.player.level}}</span></p>
+    </div>
+    <div class="col-md-3">
+      <h2>Monster</h2>
+      <p>Name: <span id="player_hp">{{fight.monster.name}}</span></p>
+      <p>HP: <span id="player_hp">{{fight.monster.hp}}</span></p>
+      <p>Level: <span id="player_hp">{{fight.monster.level}}</span></p>
+    </div>
+  </div>
+  <div>
+    <button type="button" class="btn btn-danger" ng-show="fight.monster.hp && fight.player.hp" ng-click="fight.combat()">Fight</button>
+    <button type="button" class="btn btn-success" ng-show="!fight.monster.hp || !fight.player.hp" ng-click="fight.heal()">Heal</button>
+  </div>
+  <div id="outputField">{{fight.result}}</div>
+</div>
+
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>

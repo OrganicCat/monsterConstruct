@@ -3,32 +3,45 @@
 <head>
   <title>Monster Construct</title>
   <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
+  <link href="css/main.css" rel="stylesheet">
 </head>
 
 <body>
 
 <div class="container" ng-controller="FightController as fight">
   <h1>Monster Construct</h1>
+  <select ng-model="fight.monster" ng-options="val.name for val in fight.monsterList"></select>
   <div class="row">
-    <div class="col-md-3 col-md-offset-3">
+    <div class="col-md-3 col-md-offset-2 player img-rounded">
       <h2>Player</h2>
-      <p>Name: <span id="player_hp">{{fight.player.name}}</span></p>
-      <p>HP: <span id="player_hp">{{fight.player.hp}}</span></p>
-      <p>Level: <span id="player_hp">{{fight.player.level}}</span></p>
+      <table class="table">
+        <thead></thead>
+        <tbody>
+          <tr><td>Name</td><td>{{fight.player.name}}</td></tr>
+          <tr><td>HP</td><td>{{fight.player.hp}}</td></tr>
+          <tr><td>Level</td><td>{{fight.player.level}}</td></tr>
+          <tr><td>Exp</td><td>{{fight.player.exp}}</td></tr>
+        </tbody>
+      </table>
     </div>
-    <div class="col-md-3">
-      <h2>Monster</h2>
-      <p>Name: <span id="player_hp">{{fight.monster.name}}</span></p>
-      <p>HP: <span id="player_hp">{{fight.monster.hp}}</span></p>
-      <p>Level: <span id="player_hp">{{fight.monster.level}}</span></p>
+    <div class="col-md-3 monster-common img-rounded col-md-offset-1" ng-show="fight.monster.hp > 0">
+      <h2>{{fight.monster.name}}</h2>
+      <table class="table">
+        <thead></thead>
+        <tbody>
+          <tr><td>HP</td><td>{{fight.monster.hp}}</td></tr>
+          <tr><td>Level</td><td>{{fight.monster.level}}</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
-  <div>
-    <button type="button" class="btn btn-danger" ng-show="fight.monster.hp && fight.player.hp" ng-click="fight.combat()">Fight</button>
-    <button type="button" class="btn btn-success" ng-show="!fight.monster.hp || !fight.player.hp" ng-click="fight.heal()">Heal</button>
+  <br>
+  <div class="col-md-3 col-md-offset-4 text-center">
+    <button type="button" class="btn btn-danger" ng-show="fight.monster.hp > 0 && fight.player.hp > 0" ng-click="fight.combat()">Fight</button>
+    <button type="button" class="btn btn-success" ng-show="fight.monster.hp <= 0 || fight.player.hp <= 0" ng-click="fight.heal()">Heal</button>
   </div>
-  <div id="outputField">{{fight.result}}</div>
+  <br>
+  <div class="col-md-3 col-md-offset-4 text-center" ng-repeat="result in fight.result track by $index"><p>{{result}}</p></div>
 </div>
 
 
@@ -36,6 +49,7 @@
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="main.js"></script>
+<script src="app/controllers/controllers.js"></script>
 
 </body>
 </html>

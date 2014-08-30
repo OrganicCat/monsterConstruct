@@ -1,0 +1,25 @@
+.player {
+  background-color: #047C8C;
+  border: 2px solid #000;
+  color: #FFF;
+}
+
+.monster-common {
+  background-color: #FFF;
+  border: 2px solid #000;
+}
+
+.monster-uncommon {
+  background-color: #F49B78;
+  border: 2px solid #000;
+}
+
+.monster-rare {
+  background-color: #F1706D;
+  border: 2px solid #000;
+}
+
+.monster-legendary {
+  background-color: #AC6C82;
+  border: 2px solid #000;
+}

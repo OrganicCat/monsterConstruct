@@ -20,57 +20,18 @@
     }
   };
 
-  var monsters = [
-  {
-    maxhp: 10,
-    hp: 10,
-    name: "Rat",
-    damage: 1,
-    level: 1,
-    reward: {
-      gold: 10,
-      exp: 5
-    }
-  },
-  {
-    maxhp: 20,
-    hp: 20,
-    name: "Skeleton",
-    damage: 2,
-    level: 2,
-    reward: {
-      gold: 2,
-      exp: 2
-    }
-  }];
-
-  var weaponList = [
-  {
-    name: "Rusty Dagger",
-    damage: 2,
-    cost: 5
-  },
-  {
-    name: "Shiny Dagger",
-    damage: 10,
-    cost: 50
-  },
-  {
-    name: "Shortsword",
-    damage: 15,
-    cost: 100
-  }
-  ];
-
-  app.controller('FightController', function() {
+  app.controller('FightController', ['$http', function($http) {
     var fight = this;
 
     fight.player = player;
     fight.monster = {};
-    fight.monsterList = monsters;
-    fight.weaponList = weaponList;
+    fight.monsterList = {};
+    fight.weaponList = {};
     fight.selectedWeapon = {};
     fight.result = [];
+
+    $http.get('data/weapons.json').success(function(data) { fight.weaponList = data; });
+    $http.get('data/monsters.json').success(function(data) { fight.monsterList = data; });
 
     fight.combat = function() {
       fight.monster.hp -= fight.player.getDamage();
@@ -122,6 +83,6 @@
       }
     };
 
-  });
+  }]);
 
 })();

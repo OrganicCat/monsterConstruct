@@ -25,13 +25,11 @@
 
     fight.player = player;
     fight.monster = {};
-    fight.monsterList = {};
     fight.weaponList = {};
     fight.selectedWeapon = {};
     fight.result = [];
 
     $http.get('data/weapons.json').success(function(data) { fight.weaponList = data; });
-    $http.get('data/monsters.json').success(function(data) { fight.monsterList = data; });
 
     fight.combat = function() {
       fight.monster.hp -= fight.player.getDamage();

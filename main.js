@@ -7,7 +7,7 @@
  * controllers.
  */
 (function() {
-  var app = angular.module('monsterconstruct', ['myApp.controllers']);
+  var app = angular.module('monsterconstruct', ['myApp.monsters', 'myApp.controllers']);
 
   app.directive('mcPlayer', function() {
     return {

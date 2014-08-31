@@ -12,7 +12,7 @@
   <h1>Monster Construct</h1>
   <!-- Eventually replace select monster, weapon buying, and more with a better panel -->
   <p ng-controller="MonsterController as monsterCtrl">Select monster <select ng-model="fight.monster" ng-options="val.name for val in monsterCtrl.monsterList"></select></p>
-  <p>Buy weapon <select ng-model="fight.selectedWeapon" ng-options="val.name for val in fight.weaponList"></select> <button type="button" class="btn btn-success" ng-click="fight.buyWeapon()">Buy</button></p>
+  <p>Buy weapon <select ng-model="fight.selectedWeapon" ng-options="val.name+' ('+val.cost+')' for val in fight.weaponList"></select> <button type="button" class="btn btn-success" ng-click="fight.buyWeapon()">Buy</button></p>
   <div class="row">
     <mc-player></mc-player>
     <mc-monster></mc-monster>
@@ -33,6 +33,7 @@
 <script src="main.js"></script>
 <script src="app/controllers/controllers.js"></script>
 <script src="app/controllers/monsters.js"></script>
+<script src="app/controllers/worlds.js"></script>
 
 </body>
 </html>

@@ -4,6 +4,22 @@
   color: #FFF;
 }
 
+.common {
+  color: #FFF;
+}
+
+.uncommon {
+  color: #F49B78;
+}
+
+.rare {
+  color: #F1706D;
+}
+
+.legendary {
+  color: #AC6C82;
+}
+
 .monster-common {
   background-color: #FFF;
   border: 2px solid #000;

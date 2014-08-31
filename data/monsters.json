@@ -42,5 +42,82 @@
       "gold": 7,
       "exp": 10
     }
+  },
+  {
+    "maxhp": 100,
+    "hp": 100,
+    "name": "Gnoll Chieftan",
+    "damage": 10,
+    "level": 5,
+    "reward": {
+      "gold": 10,
+      "exp": 15
+    }
+  },
+  {
+    "maxhp": 100,
+    "hp": 100,
+    "name": "Gelatinous Cube",
+    "damage": 14,
+    "level": 6,
+    "reward": {
+      "gold": 24,
+      "exp": 25
+    }
+  },
+  {
+    "maxhp": 100,
+    "hp": 100,
+    "name": "Hobgoblin",
+    "damage": 20,
+    "level": 7,
+    "reward": {
+      "gold": 30,
+      "exp": 44
+    }
+  },
+  {
+    "maxhp": 100,
+    "hp": 100,
+    "name": "Decaying Necromancer",
+    "damage": 24,
+    "level": 8,
+    "reward": {
+      "gold": 36,
+      "exp": 60
+    }
+  },
+  {
+    "maxhp": 100,
+    "hp": 100,
+    "name": "Pit Demon",
+    "damage": 40,
+    "level": 9,
+    "reward": {
+      "gold": 55,
+      "exp": 78
+    }
+  },
+  {
+    "maxhp": 100,
+    "hp": 100,
+    "name": "Balrog",
+    "damage": 50,
+    "level": 10,
+    "reward": {
+      "gold": 70,
+      "exp": 100
+    }
+  },
+  {
+    "maxhp": 100,
+    "hp": 100,
+    "name": "Lich",
+    "damage": 70,
+    "level": 11,
+    "reward": {
+      "gold": 115,
+      "exp": 150
+    }
   }
 ]

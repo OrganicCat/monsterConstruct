@@ -1,5 +1,5 @@
 (function() {
-  var app = angular.module('myApp.controllers', []);
+  var app = angular.module('myApp.combat', []);
 
   var player = {
     maxhp: 10,
@@ -67,7 +67,7 @@
       if (fight.player.exp >= expToLevel) {
         fight.player.exp = 0;
         fight.player.level++;
-        fight.player.stats.strength++;
+        fight.player.stats.strength += fight.player.level;
         fight.player.maxhp += 10;
         fight.player.hp = fight.player.maxhp;
       }

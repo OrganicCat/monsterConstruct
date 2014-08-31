@@ -2,16 +2,50 @@
   {
     "name": "Rusty Dagger",
     "damage": 2,
-    "cost": 5
+    "cost": 5,
+    "rarity": "common",
+    "inStore": true
   },
   {
     "name": "Shiny Dagger",
     "damage": 10,
-    "cost": 50
+    "cost": 50,
+    "rarity": "uncommon",
+    "inStore": true
   },
   {
     "name": "Shortsword",
     "damage": 15,
-    "cost": 100
+    "cost": 100,
+    "rarity": "common",
+    "inStore": true
+  },
+  {
+    "name": "Longsword",
+    "damage": 20,
+    "cost": 250,
+    "rarity": "common",
+    "inStore": true
+  },
+  {
+    "name": "Flaming Dagger",
+    "damage": 25,
+    "cost": 350,
+    "rarity": "rare",
+    "inStore": true
+  },
+  {
+    "name": "Silver Sword",
+    "damage": 35,
+    "cost": 450,
+    "rarity": "uncommon",
+    "inStore": true
+  },
+  {
+    "name": "Paladin's Sword",
+    "damage": 47,
+    "cost": 550,
+    "rarity": "legendary",
+    "inStore": true
   }
 ]

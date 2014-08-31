@@ -1,0 +1,17 @@
+ [
+  {
+    "name": "Rusty Dagger",
+    "damage": 2,
+    "cost": 5
+  },
+  {
+    "name": "Shiny Dagger",
+    "damage": 10,
+    "cost": 50
+  },
+  {
+    "name": "Shortsword",
+    "damage": 15,
+    "cost": 100
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "maxhp": 10,
+    "hp": 10,
+    "name": "Rat",
+    "damage": 1,
+    "level": 1,
+    "reward": {
+      "gold": 10,
+      "exp": 10
+    }
+  },
+  {
+    "maxhp": 20,
+    "hp": 20,
+    "name": "Skeleton",
+    "damage": 2,
+    "level": 2,
+    "reward": {
+      "gold": 2,
+      "exp": 2
+    }
+  },
+  {
+    "maxhp": 40,
+    "hp": 40,
+    "name": "Gnoll",
+    "damage": 4,
+    "level": 3,
+    "reward": {
+      "gold": 5,
+      "exp": 7
+    }
+  },
+  {
+    "maxhp": 100,
+    "hp": 100,
+    "name": "Fippy Darkpaw",
+    "damage": 7,
+    "level": 4,
+    "reward": {
+      "gold": 7,
+      "exp": 10
+    }
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "name" : "Grassy Plains",
+    "level" : 1
+  },
+  {
+    "name" : "Cold Hills",
+    "level" : 2
+  },
+  {
+    "name" : "Underhill",
+    "level" : 3
+  }
+]

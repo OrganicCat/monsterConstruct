@@ -9,4 +9,18 @@
 (function() {
   var app = angular.module('monsterconstruct', ['myApp.controllers']);
 
+  app.directive('mcPlayer', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'partial/player.html'
+    };
+  });
+
+  app.directive('mcMonster', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'partial/monster.html'
+    };
+  });
+
 })();

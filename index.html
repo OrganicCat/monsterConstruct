@@ -10,30 +10,12 @@
 
 <div class="container" ng-controller="FightController as fight">
   <h1>Monster Construct</h1>
-  <select ng-model="fight.monster" ng-options="val.name for val in fight.monsterList"></select>
+  <!-- Eventually replace select monster, weapon buying, and more with a better panel -->
+  <p>Select monster <select ng-model="fight.monster" ng-options="val.name for val in fight.monsterList"></select></p>
+  <p>Buy weapon <select ng-model="fight.selectedWeapon" ng-options="val.name for val in fight.weaponList"></select> <button type="button" class="btn btn-success" ng-click="fight.buyWeapon()">Buy</button></p>
   <div class="row">
-    <div class="col-md-3 col-md-offset-2 player img-rounded">
-      <h2>Player</h2>
-      <table class="table">
-        <thead></thead>
-        <tbody>
-          <tr><td>Name</td><td>{{fight.player.name}}</td></tr>
-          <tr><td>HP</td><td>{{fight.player.hp}}</td></tr>
-          <tr><td>Level</td><td>{{fight.player.level}}</td></tr>
-          <tr><td>Exp</td><td>{{fight.player.exp}}</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="col-md-3 monster-common img-rounded col-md-offset-1" ng-show="fight.monster.hp > 0">
-      <h2>{{fight.monster.name}}</h2>
-      <table class="table">
-        <thead></thead>
-        <tbody>
-          <tr><td>HP</td><td>{{fight.monster.hp}}</td></tr>
-          <tr><td>Level</td><td>{{fight.monster.level}}</td></tr>
-        </tbody>
-      </table>
-    </div>
+    <mc-player></mc-player>
+    <mc-monster></mc-monster>
   </div>
   <br>
   <div class="col-md-3 col-md-offset-4 text-center">

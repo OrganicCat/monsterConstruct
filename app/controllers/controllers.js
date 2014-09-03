@@ -20,6 +20,17 @@
     }
   };
 
+  app.controller('AdminController', function() {
+    var admin = this;
+
+    admin.playerLevel = 0;
+    admin.monsterHP = 0;
+    admin.playerstrength = 
+    admin.playerdamage = function () { return ((admin.playerLevel - 1) * 0.45) + 3; };
+
+    var numHits = (admin.playerLevel * 0.45) + 3;
+  });
+
   app.controller('FightController', ['$http', function($http) {
     var fight = this;
 

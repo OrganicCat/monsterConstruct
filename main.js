@@ -23,4 +23,11 @@
     };
   });
 
+  app.directive('mcAdmin', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'partial/admin-formula.html'
+    };
+  });
+
 })();

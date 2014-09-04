@@ -25,8 +25,10 @@
 
     admin.playerLevel = 0;
     admin.monsterHP = 0;
-    admin.playerstrength = 
-    admin.playerdamage = function () { return ((admin.playerLevel - 1) * 0.45) + 3; };
+    admin.playerdamage = function () { return (admin.playerLevel * 0.45) + 3; };
+    admin.playerstrength = function () { return Math.ceil((admin.playerdamage() * .75) * 10) / 10; };
+    admin.totalhits = function () { return Math.ceil(admin.monsterHP / admin.playerstrength()); };
+
 
     var numHits = (admin.playerLevel * 0.45) + 3;
   });

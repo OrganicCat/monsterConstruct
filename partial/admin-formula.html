@@ -1,7 +1,22 @@
-<div ng-controller="AdminController as adminCtrl">
-  <p>Enter player level: <input type="text" ng-model="adminCtrl.playerLevel"></p>
-  <p>Enter monster HP: <input type="text" ng-model="adminCtrl.monsterHP"></p>
-  <div>Player Strength = {{adminCtrl.playerstrength()}}</div>
-  <div>Player Total Damage = {{adminCtrl.playerdamage()}}</div>
-  <div>Number Hits to Kill = {{adminCtrl.totalhits()}}</div>
-</div>
+<table class="table table-striped" ng-controller="AdminController as adminCtrl">
+  <tr>
+  	<td>Enter player level</td>
+  	<td><input type="text" ng-model="adminCtrl.playerLevel"></td>
+  </tr>
+  <tr>
+  	<td>Enter monster HP</td>
+  	<td><input type="text" ng-model="adminCtrl.monsterHP"></td>
+  </tr>
+  <tr>
+  	<td>Player Strength</td>
+  	<td>{{adminCtrl.playerstrength()}}</td>
+  </tr>
+  <tr>
+  	<td>Player Total Damage</td>
+  	<td>{{adminCtrl.playerdamage()}}</td>
+  </tr>
+  <tr>
+  	<td>Number Hits to Kill</td>
+  	<td>{{adminCtrl.totalhits()}}</td>
+  </tr>
+</table>

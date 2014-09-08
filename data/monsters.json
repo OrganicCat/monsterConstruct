@@ -22,6 +22,17 @@
     }
   },
   {
+    "maxhp": 30,
+    "hp": 30,
+    "name": "Archer Skeleton",
+    "damage": 3,
+    "level": 3,
+    "reward": {
+      "gold": 3,
+      "exp": 4
+    }
+  },
+  {
     "maxhp": 40,
     "hp": 40,
     "name": "Gnoll",

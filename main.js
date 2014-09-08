@@ -7,7 +7,7 @@
  * controllers.
  */
 (function() {
-  var app = angular.module('monsterconstruct', ['myApp.monsters', 'myApp.combat', 'myApp.worlds']);
+  var app = angular.module('monsterconstruct', ['myApp.monsters', 'myApp.combat', 'myApp.worlds', 'pouchdb']);
 
   app.directive('mcPlayer', function() {
     return {
@@ -29,5 +29,27 @@
       templateUrl: 'partial/admin-formula.html'
     };
   });
+
+  var db = new PouchDB('mcMonster');
+  var remoteCouch = false;
+
+  /*db.get('foo', function(err, otherDoc) {
+    console.log('got object: ', otherDoc);
+    db.remove(otherDoc, function(err, response) {
+      console.log("error: ", err);
+      console.log("response: ", response);
+    });
+  });*/
+
+  db.get('foo', function(err, otherDoc) {
+    console.log('object is: ', otherDoc);
+    db.put({
+      name: "Let's Dance"
+    }, 'foo', otherDoc._rev, function(err, response) {
+      console.log("Updated doc: ", response);
+    });
+  });
+
+
 
 })();

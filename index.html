@@ -16,22 +16,25 @@
     <div class="col-md-3 col-md-offset-2">Buy weapon <select class="form-control" ng-model="fight.selectedWeapon" ng-options="val.name+' ('+val.cost+')' for val in fight.weaponList"></select></div>
     <button type="button" class="btn btn-success col-md-1" ng-click="fight.buyWeapon()">Buy</button>
   </div>
+  <div class="row">
+    <div class="col-md-3 col-md-offset-4 text-center stacked-grid">
+      <button type="button" class="btn btn-danger" ng-show="fight.monster.hp > 0 && fight.player.hp > 0" ng-click="fight.combat()">Fight</button>
+      <button type="button" class="btn btn-success" ng-show="fight.monster.hp <= 0 || fight.player.hp <= 0" ng-click="fight.heal()">Heal</button>
+    </div>
+  </div>
   <div class="row stacked-grid">
     <mc-player></mc-player>
+    <div class="col-md-4 text-center"><div ng-repeat="result in fight.result track by $index">{{result}}</div></div>
     <mc-monster></mc-monster>
   </div>
-  <div class="col-md-3 col-md-offset-4 text-center">
-    <button type="button" class="btn btn-danger" ng-show="fight.monster.hp > 0 && fight.player.hp > 0" ng-click="fight.combat()">Fight</button>
-    <button type="button" class="btn btn-success" ng-show="fight.monster.hp <= 0 || fight.player.hp <= 0" ng-click="fight.heal()">Heal</button>
-  </div>
-  <br>
-  <div class="col-md-3 col-md-offset-4 text-center" ng-repeat="result in fight.result track by $index"><p>{{result}}</p></div>
 </div>
 
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/pouchdb/dist/pouchdb-nightly.min.js"></script>
+<script src="bower_components/angular-pouchdb/angular-pouchdb.js"></script>
 <script src="main.js"></script>
 <script src="app/controllers/controllers.js"></script>
 <script src="app/controllers/monsters.js"></script>

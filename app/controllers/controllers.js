@@ -32,16 +32,16 @@
 
     var numHits = (admin.playerLevel * 0.45) + 3;
 
-    var ref = new Firebase("https://monster-construct.firebaseio.com/player");
+    /*var ref = new Firebase("https://monster-construct.firebaseio.com/player");
     // create an AngularFire reference to the data
     var sync = $firebase(ref);
     // download the data into a local object
     var syncObject = sync.$asObject();
-    syncObject.$bindTo($scope, 'admin.data');
+    syncObject.$bindTo($scope, 'admin.data');*/
 
   }]);
 
-  app.controller('FightController', ['$http', function($http) {
+  app.controller('FightController', ['$http', 'monsterService', function($http, monsterService) {
     var fight = this;
 
     fight.player = player;
@@ -49,6 +49,9 @@
     fight.weaponList = {};
     fight.selectedWeapon = {};
     fight.result = [];
+    // monsterService.monsterList.success(function(data) { fight.monsterList = data });
+    fight.monsterList = monsterService.monsterList;
+    // var test = monsterService.monsterList;
 
     $http.get('data/weapons.json').success(function(data) { fight.weaponList = data; });
 

@@ -1,11 +1,11 @@
 (function() {
-  var app = angular.module('myApp.monsters', []);
+  var app = angular.module('myApp.monsters', ['ngResource']);
 
-  app.controller('MonsterController', ['$http', function($http) {
-    var monster = this;
-    monster.monsterList = {};
-
-    $http.get('data/monsters.json').success(function(data) { monster.monsterList = data; });
+  app.factory('monsterService', ['$http', '$resource', function($http, $resource) {
+  	return {
+  		monsterList: $resource('data/monsters.json').query()
+  		// monsterList: $http.get('data/monsters.json')
+  	};
 
   }]);
 

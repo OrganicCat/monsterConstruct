@@ -1,5 +1,5 @@
 (function() {
-  var app = angular.module('myApp.combat', []);
+  var app = angular.module('myApp.combat', ['firebase']);
 
   var player = {
     maxhp: 10,
@@ -20,7 +20,7 @@
     }
   };
 
-  app.controller('AdminController', function() {
+  app.controller('AdminController', ['$firebase', '$scope', function($firebase, $scope) {
     var admin = this;
 
     admin.playerLevel = 0;
@@ -31,7 +31,15 @@
 
 
     var numHits = (admin.playerLevel * 0.45) + 3;
-  });
+
+    var ref = new Firebase("https://monster-construct.firebaseio.com/player");
+    // create an AngularFire reference to the data
+    var sync = $firebase(ref);
+    // download the data into a local object
+    var syncObject = sync.$asObject();
+    syncObject.$bindTo($scope, 'admin.data');
+
+  }]);
 
   app.controller('FightController', ['$http', function($http) {
     var fight = this;

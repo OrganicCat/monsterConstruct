@@ -12,21 +12,21 @@
   app.directive('mcPlayer', function() {
     return {
       restrict: 'E',
-      templateUrl: 'partial/player.html'
+      templateUrl: 'app/player/player.html'
     };
   });
 
   app.directive('mcMonster', function() {
     return {
       restrict: 'E',
-      templateUrl: 'partial/monster.html'
+      templateUrl: 'app/monster/monster.html'
     };
   });
 
   app.directive('mcAdmin', function() {
     return {
       restrict: 'E',
-      templateUrl: 'partial/admin-formula.html'
+      templateUrl: 'app/admin/admin-formula.html'
     };
   });
 

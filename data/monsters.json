@@ -11,6 +11,28 @@
     }
   },
   {
+    "maxhp": 10,
+    "hp": 10,
+    "name": "Tired Goblin",
+    "damage": 1,
+    "level": 1,
+    "reward": {
+      "gold": 10,
+      "exp": 10
+    }
+  },
+  {
+    "maxhp": 10,
+    "hp": 10,
+    "name": "Giant Beetle",
+    "damage": 1,
+    "level": 1,
+    "reward": {
+      "gold": 10,
+      "exp": 10
+    }
+  },
+  {
     "maxhp": 20,
     "hp": 20,
     "name": "Skeleton",
@@ -22,9 +44,53 @@
     }
   },
   {
+    "maxhp": 20,
+    "hp": 20,
+    "name": "Alert Goblin",
+    "damage": 2,
+    "level": 2,
+    "reward": {
+      "gold": 2,
+      "exp": 2
+    }
+  },
+  {
+    "maxhp": 20,
+    "hp": 20,
+    "name": "Bobcat",
+    "damage": 2,
+    "level": 2,
+    "reward": {
+      "gold": 2,
+      "exp": 2
+    }
+  },
+  {
     "maxhp": 30,
     "hp": 30,
-    "name": "Archer Skeleton",
+    "name": "Skeletal Archer",
+    "damage": 3,
+    "level": 3,
+    "reward": {
+      "gold": 3,
+      "exp": 4
+    }
+  },
+  {
+    "maxhp": 30,
+    "hp": 30,
+    "name": "Goblin Scout",
+    "damage": 3,
+    "level": 3,
+    "reward": {
+      "gold": 3,
+      "exp": 4
+    }
+  },
+  {
+    "maxhp": 30,
+    "hp": 30,
+    "name": "Slime Ball",
     "damage": 3,
     "level": 3,
     "reward": {

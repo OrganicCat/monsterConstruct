@@ -7,7 +7,7 @@
  * controllers.
  */
 (function() {
-  var app = angular.module('monsterconstruct', ['myApp.monsters', 'myApp.combat', 'myApp.worlds']);
+  var app = angular.module('monsterconstruct', ['myApp.monsters', 'myApp.combat', 'myApp.worlds', 'myApp.admin']);
 
   app.directive('mcPlayer', function() {
     return {
@@ -29,6 +29,5 @@
       templateUrl: 'app/admin/admin-formula.html'
     };
   });
-
 
 })();

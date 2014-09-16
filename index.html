@@ -9,8 +9,9 @@
 <body>
 
 <div class="container" ng-controller="FightController as fight">
-  <h1>Test Construct</h1>
+  <h1>Monster Construct</h1>
   <mc-admin></mc-admin>
+  <mc-worlds class="row stacked-grid" ng-controller="WorldController as worlds"></mc-worlds>
   <div class="row stacked-grid">
     <div class="col-md-3">Select monster <select class="form-control" ng-model="fight.monster" ng-options="val.name for val in fight.monsterList"></select></div>
     <div class="col-md-3 col-md-offset-2">Buy weapon <select class="form-control" ng-model="fight.selectedWeapon" ng-options="val.name+' ('+val.cost+')' for val in fight.weaponList"></select></div>
@@ -38,8 +39,12 @@
 <script src="bower_components/angular-resource/angular-resource.js"></script>
 
 <script src="main.js"></script>
+<script src="app/admin/admin-controller.js"></script>
+<script src="app/player/player-factory.js"></script>
 <script src="app/fight/fight-controller.js"></script>
-<script src="app/monster/monster-controller.js"></script>
+<script src="app/monster/monster-factory.js"></script>
+<script src="app/world/world-factory.js"></script>
+<script src="app/world/world-directive.js"></script>
 <script src="app/world/world-controller.js"></script>
 
 </body>

@@ -9,7 +9,8 @@
       var worldMobList = monsterFactory.monsterList.filter(function(element) {
         return element.level == worldLevel;
       });
-      console.log(worldMobList);
+      var randomMonster = worldMobList[Math.floor(Math.random() * worldMobList.length)];
+      console.log(randomMonster);
     };
     // console.log(worldCtrl.getWorldList);
     // worldCtrl.getMonsterList = function() {};

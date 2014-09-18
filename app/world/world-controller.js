@@ -1,7 +1,7 @@
 (function() {
   var app = angular.module('myApp.worlds');
 
-  app.controller('WorldController', ['worldFactory', 'monsterFactory', function(worldFactory, monsterFactory) {
+  app.controller('WorldController', ['worldFactory', 'monsterFactory', 'monsterService', function(worldFactory, monsterFactory, monsterService) {
     var worldCtrl = this;
     
     worldCtrl.getWorldList = worldFactory.worldList;
@@ -10,7 +10,7 @@
         return element.level == worldLevel;
       });
       var randomMonster = worldMobList[Math.floor(Math.random() * worldMobList.length)];
-      console.log(randomMonster);
+      monsterService.setMonster(randomMonster);
     };
     // console.log(worldCtrl.getWorldList);
     // worldCtrl.getMonsterList = function() {};

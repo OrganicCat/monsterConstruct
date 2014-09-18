@@ -13,14 +13,14 @@
   <mc-admin></mc-admin>
   <mc-worlds class="row stacked-grid" ng-controller="WorldController as worlds"></mc-worlds>
   <div class="row stacked-grid">
-    <div class="col-md-3">Select monster <select class="form-control" ng-model="fight.monster" ng-options="val.name for val in fight.monsterList"></select></div>
+    <div class="col-md-3">Select monster <select class="form-control" ng-model="fight.setMonster" ng-options="val.name for val in fight.monsterList"></select></div>
     <div class="col-md-3 col-md-offset-2">Buy weapon <select class="form-control" ng-model="fight.selectedWeapon" ng-options="val.name+' ('+val.cost+')' for val in fight.weaponList"></select></div>
-    <button type="button" class="btn btn-success col-md-1" ng-click="fight.buyWeapon()">Buy</button>
+    <div class="col-md-2"><button type="button" class="btn btn-success" ng-click="fight.buyWeapon()">Buy</button></div>
   </div>
   <div class="row">
     <div class="col-md-3 col-md-offset-4 text-center stacked-grid">
-      <button type="button" class="btn btn-danger" ng-show="fight.monster.hp > 0 && fight.player.hp > 0" ng-click="fight.combat()">Fight</button>
-      <button type="button" class="btn btn-success" ng-show="fight.monster.hp <= 0 || fight.player.hp <= 0" ng-click="fight.heal()">Heal</button>
+      <button type="button" class="btn btn-danger" ng-show="fight.monster().hp > 0 && fight.player.hp > 0" ng-click="fight.combat()">Fight</button>
+      <button type="button" class="btn btn-success" ng-show="fight.monster().hp <= 0 || fight.player.hp <= 0" ng-click="fight.heal()">Heal</button>
     </div>
   </div>
   <div class="row stacked-grid">
@@ -43,6 +43,7 @@
 <script src="app/player/player-factory.js"></script>
 <script src="app/fight/fight-controller.js"></script>
 <script src="app/monster/monster-factory.js"></script>
+<script src="app/monster/monster-service.js"></script>
 <script src="app/world/world-factory.js"></script>
 <script src="app/world/world-directive.js"></script>
 <script src="app/world/world-controller.js"></script>

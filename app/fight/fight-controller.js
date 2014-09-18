@@ -1,11 +1,12 @@
 (function() {
   var app = angular.module('myApp.combat', ['myApp.player']);
 
-  app.controller('FightController', ['$http', 'monsterFactory', 'playerFactory', function($http, monsterFactory, playerFactory) {
+  app.controller('FightController', ['$http', 'monsterFactory', 'playerFactory', 'monsterService', function($http, monsterFactory, playerFactory, monsterService) {
     var fight = this;
 
     fight.player = playerFactory;
-    fight.monster = {};
+    fight.monster = monsterService.getMonster;
+    fight.setMonster = monsterService.setMonster();
     fight.weaponList = {};
     fight.selectedWeapon = {};
     fight.result = [];
@@ -16,16 +17,16 @@
     $http.get('data/weapons.json').success(function(data) { fight.weaponList = data; });
 
     fight.combat = function() {
-      fight.monster.hp -= fight.player.getDamage();
+      fight.monster().hp -= fight.player.getDamage();
 
       fight.result.push(fight.player.name + " did " + fight.player.getDamage() + " damage.");
 
-      if (fight.monster.hp > 0) {
-        fight.player.hp -= fight.monster.damage;
-        fight.result.push(fight.monster.name + " did " + fight.monster.damage + " damage.");
+      if (fight.monster().hp > 0) {
+        fight.player.hp -= fight.monster().damage;
+        fight.result.push(fight.monster().name + " did " + fight.monster().damage + " damage.");
       } else {
         fight.rewards();
-        fight.result.push(fight.monster.name + " lost the battle!");
+        fight.result.push(fight.monster().name + " lost the battle!");
       }
 
       if (fight.player.hp < 1) {
@@ -34,15 +35,15 @@
     };
 
     fight.heal = function() {
-      fight.monster.hp = fight.monster.maxhp;
+      fight.monster().hp = fight.monster().maxhp;
       fight.player.hp = fight.player.maxhp;
       fight.result = [];
     };
 
     fight.rewards = function() {
-      fight.player.exp += fight.monster.reward.exp;
+      fight.player.exp += fight.monster().reward.exp;
       fight.levelUp();
-      fight.player.gold += fight.monster.reward.gold;
+      fight.player.gold += fight.monster().reward.gold;
     };
 
     fight.levelUp = function() {

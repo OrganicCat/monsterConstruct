@@ -20,23 +20,34 @@ module.exports = function(grunt) {
         files: ['less/**/*.less'], // which files to watch
         tasks: ['less'],
         options: {
-          nospawn: true
+          nospawn: true,
         }
-      }
+      },
+      options: {
+        livereload: true,
+      },
+      scripts: {
+        files: '**/*.js',
+      },
     },
     connect: {
-      server: {
+      options: {
+        port: 9001,
+        livereload: 35729,
+        hostname: 'localhost'
+      },
+      livereload: {
         options: {
-          port: 9001,
-          hostname: 'localhost',
-          keepalive: true
+          open: true
         }
-      }
-    }
+      },
+    },
   });
 
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
+
+  grunt.registerTask('default', ['connect:livereload', 'watch']);
 
 };
